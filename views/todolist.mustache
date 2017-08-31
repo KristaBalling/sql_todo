@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+  </head>
+  <body>
+    <h1>Do All of These Things Immediately.</h1>
+    <form method="post" action="/addtodo">
+      <input type="text" name="task" placeholder="Task">
+      <input type="submit" value="Add todo">
+  </form>
+  <ul>
+    {{#todoitem}}
+    <li>
+    <form class="" action="/complete/{{id}}" method="post">
+      {{#completed}}
+      <label for=""><del>{{name}}</del></label>
+      <del><del>
+    {{/completed}}
+    {{^completed}}
+    <label for="">{{name}}</label>
+    <input type="submit" value="Mark as Completed.">
+    {{/completed}}
+  </form>
+</li>
+    {{/todoitem}}
+  </ul>
+
+  </body>
+</html>
